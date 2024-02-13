@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="./Styles/yes_style.css">
+        
+    </head> 
+    <body >
+        <div class="container" id="content">
+            <div class="gif_container">
+                <img src="./Images/rizz.gif" alt="Rizz.gif" preload>
+            </div>
+            <h1 class="header_text">hell yeah cuh!!</h1>
+        </div>
+      <script>
+        function nextFrame() {
+            document.getElementById('content').innerHTML = `
+            <div class="gif_container">
+                <img src="https://media0.giphy.com/media/T86i6yDyOYz7J6dPhf/giphy.gif" alt="Cute animated illustration">
+            </div>
+            <h1 class="header_text">Wait no i mean yayyyyyy!!</h1>
+            `;
+            setTimeout(nextPage,  4000)
+            }
+        function nextPage() {
+            window.location.href = "intro.html"
+        }
+        window.onload = function() { setTimeout(nextFrame, 4000); }
+      </script>  
+    </body> 
+</html>

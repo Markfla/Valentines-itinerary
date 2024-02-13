@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Happy Valentines</title>
+    <link rel="stylesheet" href="./Styles/activity_style.css">
+    <meta charset="UTF-8" />
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1>A wee bitta weed</h1>
+    <h3>You know the deal, time to bug Caitlin and beg for a doobie to share (bonus points if you make her think it's her idea)</h3>
+    <div id="imgDiv">
+      <img id ="smallIMG" src="./Images/doobiebun-nbg.png" preload>
+      
+      <img id="addSpace" src="./Images/bagofweed.gif" preload>
+
+      <img id ="smallIMG" src="./Images/doobiekat-nbg.png" preload>
+    </div>
+    
+    <footer>
+      <div class="column">
+        <img src="./Images/bunnyLine.svg">
+        <button id="backBtn" onclick="back()">Back</button>
+      </div>
+    </footer>
+    <script>
+      function back() {
+          window.location.href = "main.html";
+      }
+      function newVideo() {
+        // Prevent the default form submission behavior
+        event.preventDefault();
+        // Get the URL input value
+        let url = document.getElementById("musicUrl").value;
+
+        // Extract the YouTube video ID from the URL
+        let videoID = extractVideoID(url);
+
+        // Update the src attribute of the iframe
+        document.getElementById("musicPlayer").src = "https://www.youtube.com/embed/" + videoID;
+      }
+
+      // Function to extract the YouTube video ID from the URL
+      function extractVideoID(url) {
+          let videoID = "";
+          // Regular expression to match YouTube URL patterns
+          let regExp = /^.*(youtu.be\/|v\/|e\/|u\/\w+\/|embed\/|v=)([^#\&\?]*).*/;
+          let match = url.match(regExp);
+          if (match && match[2].length === 11) {
+              videoID = match[2];
+          }
+          return videoID;
+      }
+    </script> 
+  </body>
+</html>

@@ -17,17 +17,29 @@
         </div>
         <div class = "buttons">
             <button class="btn" id = "yesButton" onclick="nextPage()">Yes</button>
-            <button height="50px" class="btn" id="noButton" onmouseover="moveButton()" onclick="moveButton()">No</button>
+            <button height="50px" class="btn" id="noButton" onmouseover="noBtnHoverController()" onclick="noBtnHoverController()">No</button>
             <script>
                 function nextPage() {
-                    window.location.href = "yes.html";
+                    window.location.href = "./src/yes.html";
+                }
+
+                function noBtnHoverController() {
+                    moveButton()
+                    enlargeYes()
+                }
+                function enlargeYes() {
+                    var currentFontSize = parseInt(window.getComputedStyle(document.getElementById('yesButton')).fontSize);
+                    document.getElementById('yesButton').style.fontSize = (currentFontSize + 10) + 'px'; // Increase font size by 10px
                 }
 
                 function moveButton() {
                     var x = Math.random() * (window.innerWidth - document.getElementById('noButton').offsetWidth) - 85;
                     var y = Math.random() * (window.innerHeight - document.getElementById('noButton').offsetHeight) - 48;
                     document.getElementById('noButton').style.left = `${x}px`;
-                    document.getElementById('noButton').style.top = `${y}px`;
+                    document.getElementById('noButton').style.top = `${y}px`
+
+                    var currentFontSize = parseInt(window.getComputedStyle(document.getElementById('noButton')).fontSize);
+                    document.getElementById('noButton').style.fontSize = (currentFontSize - 1) + 'px'; // Decrease font size by 1px
                 }
             </script> 
         </div>
