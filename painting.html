@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Happy Valentines</title>
+    <link rel="stylesheet" href="./src/Styles/activity_style.css">
+    <meta charset="UTF-8" />
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <h1>Canvas painting</h1>
+    <h3>Set a timer for a set time and start painting on a large canvas, be quick though as each minute control is swapped and your partner must carry on where you left off </h3>
+    <div id="imgDiv">
+      <img id ="smallIMG" src="./src/Images/u.png">
+      <img id ="addSpace" src="./src/Images/canvas.jpg" width="420" height="315">
+      <img id ="smallIMG" src="./src/Images/me.png">
+    </div>
+    <h4>Once the main canvas is done, take a few minutes to create individual mini-canvases for your solo take on the style</h4>
+    <footer>
+      <div class="column">
+        <img src="./src/Images/bunnyLine.svg">
+        <button id="backBtn" onclick="back()">Back</button>
+      </div>
+    </footer>
+    <script>
+      function back() {
+          window.location.href = "main.html";
+      }
+    </script> 
+  </body>
+</html>
